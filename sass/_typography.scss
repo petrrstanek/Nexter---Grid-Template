@@ -1,0 +1,74 @@
+@import 'mixins';
+html {
+  font-size: 62.5%;
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  @include respond(phone) {
+    font-size: 45%;
+  }
+}
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+
+.heading-primary {
+  font-family: 'Josefin Sans';
+  font-size: 4rem;
+  color: #fff;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.heading-secondary {
+  text-transform: uppercase;
+  color: $color-primary;
+  font-size: 2rem;
+  align-self: end;
+}
+
+.realtors-heading {
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15%;
+  color: $color-primary;
+  font-size: 1.8rem;
+  white-space: nowrap;
+  @include respond(phone) {
+    position: relative;
+    top: 10%;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+}
+
+.nexter-button {
+  outline: none;
+  border: 0;
+  background-color: $color-primary;
+  color: #fff;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans';
+
+  &:hover {
+    background: darken($color-primary, 10%);
+    cursor: pointer;
+  }
+}
+
+.heading-item {
+  background-color: $color-secondary;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  top: -2.2rem;
+  width: 80%;
+  font-family: 'Nunito';
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding: 1rem;
+}

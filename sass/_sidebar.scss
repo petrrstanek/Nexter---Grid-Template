@@ -1,0 +1,81 @@
+.sidebar {
+  background-color: lime;
+  grid-row: 1 / -1;
+  background-color: $color-primary;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  width: 60px;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+
+  @include respond(phone) {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    width: 100%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    width: 5rem;
+    height: 5rem;
+    fill: #fff;
+    transition: 0.3s ease;
+    margin-top: 1.5rem;
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  ul {
+    list-style: none;
+    color: #fff;
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-size: 3rem;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    transition: 0.3s ease;
+    margin-left: -235px;
+    margin-top: 10rem;
+
+    li {
+      align-self: start;
+    }
+    li:not(:last-child) {
+      margin-bottom: 3.5rem;
+
+      @include respond(phone) {
+        margin: 0;
+      }
+    }
+    @include respond(phone) {
+      flex-direction: row;
+      justify-content: space-around;
+      position: relative;
+      left: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+.active {
+  width: 200px;
+}
+
+.svg-active {
+  margin-left: 120px;
+}
+
+.ulko-active {
+  margin-left: 90px !important;
+}

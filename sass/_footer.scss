@@ -1,0 +1,46 @@
+.footer {
+  grid-column: full-start / full-end;
+  background-color: $color-secondary;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .copy {
+    display: flex;
+    margin: 2rem 0;
+    a {
+      margin-left: 10px;
+      color: #fff;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    flex-wrap: wrap;
+    // li:not(:last-child) {
+    //   margin-right: 2rem;
+    // }
+
+    li {
+      background-color: $color-secondary;
+      width: 18rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      transition: 0.3s ease;
+
+      &:hover {
+        background: lighten($color-secondary, 10%);
+        transform: translateY(-3px);
+        cursor: pointer;
+      }
+    }
+  }
+}

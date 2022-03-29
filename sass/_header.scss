@@ -1,0 +1,85 @@
+.header {
+  grid-column: full-start / col-end 6;
+  background-image: url('../img/hero.jpeg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 2000px rgba($color-secondary, 0.9);
+  transition: 0.3s ease;
+
+  @include respond(phone) {
+    grid-row: 2 / 3;
+    grid-column: full-start / full-end;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    .logo {
+      width: 200px;
+      justify-self: center;
+      padding-top: 4rem;
+    }
+
+    &-heading {
+      justify-self: center;
+      @include respond(tab-port) {
+        padding: 4rem;
+      }
+    }
+
+    &-ref--logos {
+      width: 70%;
+      white-space: nowrap;
+      justify-self: center;
+      align-self: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      padding-bottom: 4rem;
+      align-items: center;
+      justify-items: center;
+      img {
+        width: 65%;
+        filter: brightness(70%);
+      }
+
+      img:nth-child(3) {
+        width: 100%;
+      }
+
+      img:nth-child(4) {
+        width: 55%;
+      }
+    }
+  }
+}
+
+.header-active {
+  grid-column: content-start / col-end 6;
+}
+
+.seen {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  color: #b2b2b2;
+  font-size: 1.5rem;
+  grid-gap: 3rem;
+  align-content: end;
+  padding-bottom: 2rem;
+
+  &::after,
+  &::before {
+    content: '';
+    height: 1px;
+    width: 90%;
+    background-color: currentColor;
+    align-self: center;
+  }
+  &::before {
+    justify-self: end;
+  }
+}

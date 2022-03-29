@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] min-content [sidebar-end full-start]
+    minmax(60px, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 150px) [col-end])
+    [content-end] minmax(60px, 1fr) [full-end];
+  transition: 0.3s ease;
+
+  @include respond(phone) {
+    grid-template-rows: 6rem 80vh min-content repeat(4, min-content);
+    grid-template-columns:
+      [full-start] minmax(60px, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 150px) [col-end])
+      [content-end] minmax(60px, 1fr) [full-end];
+  }
+}

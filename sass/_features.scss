@@ -1,0 +1,43 @@
+@import 'mixins';
+
+.features {
+  grid-column: col-start 1 / col-end 8;
+
+  @include respond(phone) {
+    grid-row: 4 / 5;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 301px));
+    grid-template-rows: repeat(3, min-content);
+    justify-content: center;
+    grid-gap: 8rem;
+    font-size: 1.5rem;
+    font-family: 'Nunito';
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    margin: 5rem 0;
+    width: 100%;
+    margin-left: 6rem;
+
+    svg {
+      fill: $color-primary;
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      margin-left: -6rem;
+    }
+
+    &-box--1 {
+    }
+
+    .heading {
+      font-family: 'Nunito';
+      font-weight: 500;
+      font-size: 2rem;
+      letter-spacing: normal;
+      padding-bottom: 2rem;
+    }
+  }
+}
